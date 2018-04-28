@@ -39,7 +39,7 @@ try:
 		for i in range(len(val)):
 			cadena.append(chr(val[i]))
 		
-		#Elomina los 2 últimos caracteres leidos "Retorno de carro" y "Salto de línea"
+		#Elimina los 2 últimos caracteres leidos "Retorno de carro" y "Salto de línea"
 		try:
 			cadena.pop(-1) 
 			cadena.pop(-1)
