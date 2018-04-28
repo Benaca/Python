@@ -72,3 +72,7 @@ except KeyboardInterrupt:
 	print ("\nPrograma interrumpido")
 	arduino.close()
 	GPIO.cleanup()
+
+
+
+	
