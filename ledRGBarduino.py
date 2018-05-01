@@ -1,5 +1,3 @@
-#!usr/bin/env/ python
-
 """
 Lee información de Arduino mediante USB
 
@@ -9,6 +7,10 @@ y los almacena en el diccionario "colores"
 Luego usa estos valores para controlar un led RGB conectado a los GPIO R:18 G:23 B:24
 
 """
+
+
+#!usr/bin/env/ python
+# -*- coding: UTF-8 -*-
 
 import serial
 import RPi.GPIO as GPIO 
