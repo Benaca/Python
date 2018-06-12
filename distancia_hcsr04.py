@@ -42,7 +42,7 @@ try:
 		#calcula distancia
 		distancia = t_transcurrido*34000/2
 
-		print (distancia)
+		print ("Distancia = %.1f cm"%distancia)
 
 except KeyboardInterrupt:
 	GPIO.cleanup()
