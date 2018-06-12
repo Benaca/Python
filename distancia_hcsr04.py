@@ -31,7 +31,7 @@ try:
 		inicio=time.time()
 
 		while GPIO.input(Echo)==0:
-			pass
+			inicio=time.time()
 
 		while GPIO.input(Echo)==1:
 			final=time.time()
