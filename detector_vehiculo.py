@@ -12,18 +12,20 @@ GPIO.setmode(GPIO.BOARD)
 
 Trigger = 10
 Echo = 12
-green = 18
-red = 16
 
 GPIO.setup(Trigger, GPIO.OUT)
 GPIO.setup(Echo, GPIO.IN)
-GPIO.setup(green, GPIO.OUT)
-GPIO.setup(red, GPIO.OUT)
+GPIO.setup(16, GPIO.OUT)
+GPIO.setup(18, GPIO.OUT)
 
 print ("Sensor ultrasónico HC-SR04")
 
-GPIO.output(green, False)
-GPIO.output(red, False)
+rojo = GPIO.PWM(16, 100)
+verde = GPIO.PWM(18,100)
+
+rojo.start(0)
+verde.start(0)
+
 
 try:
 	while True:
@@ -57,11 +59,11 @@ try:
 			presencia_vehiculo = False
 
 		if presencia_vehiculo:
-			GPIO.output(green, True)
-			GPIO.output(red, False)
+			rojo.ChangeDutyCycle(0)
+			verde.ChangeDutyCycle(100)
 		else:
-			GPIO.output(green, False)
-			GPIO.output(red, True)
+			rojo.ChangeDutyCycle(100)
+			verde.ChangeDutyCycle(0)
 
 
 except KeyboardInterrupt:
